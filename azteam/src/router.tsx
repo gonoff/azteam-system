@@ -9,6 +9,10 @@ import { CardSkeleton } from '@/components/shared'
 // Lazy-loaded routes for code-splitting
 const LoginPage = lazy(() => import('@/pages/LoginPage'))
 const SignupPage = lazy(() => import('@/pages/SignupPage'))
+const OrderTrackerPage = lazy(() => import('@/pages/OrderTrackerPage'))
+const ShirtKanbanPage = lazy(() => import('@/pages/ShirtKanbanPage'))
+const BusinessCardKanbanPage = lazy(() => import('@/pages/BusinessCardKanbanPage'))
+const TaskManagerPage = lazy(() => import('@/pages/TaskManagerPage'))
 
 /**
  * Wraps a component with Suspense and a fallback loading state
@@ -35,8 +39,22 @@ const publicRoutes: RouteObject[] = [
 
 // Protected routes that require authentication
 const protectedRoutes: RouteObject[] = [
-  // Add your protected routes here
-  // e.g. dashboard, profile, settings, etc.
+  {
+    path: '/orders',
+    element: withSuspense(OrderTrackerPage),
+  },
+  {
+    path: '/kanban/shirts',
+    element: withSuspense(ShirtKanbanPage),
+  },
+  {
+    path: '/kanban/business-cards',
+    element: withSuspense(BusinessCardKanbanPage),
+  },
+  {
+    path: '/tasks',
+    element: withSuspense(TaskManagerPage),
+  }
 ]
 
 // Main application routes

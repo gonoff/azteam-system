@@ -10,6 +10,20 @@ import {
 } from './enums'
 
 /**
+ * Client information interface
+ * Represents customer details for an order
+ */
+export interface ClientInfo {
+  id?: string
+  name: string
+  phone: string
+  email?: string
+  address?: string
+  company?: string
+  notes?: string
+}
+
+/**
  * Order item interface
  * Represents a single item within an order
  */
@@ -17,9 +31,15 @@ export interface OrderItem {
   id: string
   size: Size
   quantity: number
+  color?: string
   description: string
   productionMethod: ProductionMethod
   status: OrderStatus
+  artworkStatus?: ArtworkStatus
+  artworkUrl?: string
+  notes?: string
+  estimatedTime?: number
+  taskIds?: string[]
 }
 
 /**
@@ -28,13 +48,33 @@ export interface OrderItem {
  */
 export interface Order {
   id: string
-  clientName: string
-  clientPhone: string
+  orderNumber?: string
+  client: ClientInfo
   orderDate: string
   dueDate: string
+  estimatedCompletionDate?: string
   isPriority: boolean
   items: OrderItem[]
   status: OrderStatus
+  totalQuantity?: number
+  totalEstimatedTime?: number
+  notes?: string
+  paymentStatus?: 'UNPAID' | 'PARTIAL' | 'PAID'
+  paymentAmount?: number
+  createdAt: string
+  updatedAt: string
+  statusHistory?: StatusHistoryEntry[]
+}
+
+/**
+ * Status history entry interface
+ * Tracks changes to order status
+ */
+export interface StatusHistoryEntry {
+  status: OrderStatus
+  timestamp: string
+  notes?: string
+  updatedBy?: string
 }
 
 /**

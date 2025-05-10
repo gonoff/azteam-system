@@ -3,10 +3,15 @@
  * Represents the possible states of an order in the system
  */
 export enum OrderStatus {
-  AWAITING = 'AWAITING',
-  ORDER_PLACED = 'ORDER_PLACED',
-  SHIRTS_ARRIVED = 'SHIRTS_ARRIVED',
-  DELIVERED = 'DELIVERED'
+  PENDING = 'PENDING',           // Initial status when order is created
+  CONFIRMED = 'CONFIRMED',       // Order has been confirmed
+  AWAITING = 'AWAITING',         // Awaiting further action
+  ORDER_PLACED = 'ORDER_PLACED', // Order has been placed with supplier
+  SHIRTS_ARRIVED = 'SHIRTS_ARRIVED', // Shirts have arrived from supplier
+  IN_PRODUCTION = 'IN_PRODUCTION', // Currently being produced
+  COMPLETED = 'COMPLETED',       // Production is complete
+  DELIVERED = 'DELIVERED',       // Delivered to client
+  CANCELLED = 'CANCELLED'        // Order has been cancelled
 }
 
 /**

@@ -11,6 +11,8 @@ Welcome to the AZ Team Order Tracker documentation. This system is designed to s
 | [Workflow Documentation](./workflow-documentation.md) | Business process flows and automation rules |
 | [Component API Specifications](./component-api-specifications.md) | Interface definitions for system components |
 | [Development Environment Setup](./development-environment-setup.md) | Setting up the development environment |
+| [Implementation Roadmap](./implementation-roadmap.md) | Step-by-step plan with progress tracking |
+| [Order Tracker Features](./order-tracker-features.md) | Guide to using the Order Tracker features |
 
 ## Project Overview
 
@@ -34,6 +36,8 @@ The AZ Team Order Tracker consists of four interconnected components:
 2. Explore the [Database Schema](./database-schema.md) to understand the data model
 3. Study the [Workflow Documentation](./workflow-documentation.md) for business processes
 4. Set up your development environment following the [Development Environment Setup](./development-environment-setup.md) guide
+5. Check the [Implementation Roadmap](./implementation-roadmap.md) to see the current progress
+6. Follow the [Order Tracker Features](./order-tracker-features.md) guide to test the implemented features
 
 ## Technology Stack
 

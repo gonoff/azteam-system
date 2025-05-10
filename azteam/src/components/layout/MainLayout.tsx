@@ -1,6 +1,7 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import { Toaster } from '@/components/ui/sonner'
+import Navigation from './Navigation'
 
 interface MainLayoutProps {
   children?: React.ReactNode
@@ -17,12 +18,12 @@ export default function MainLayout({ children }: MainLayoutProps) {
         <header className="sticky top-0 z-50 border-b bg-background">
           <div className="container flex h-16 items-center px-4 sm:px-6">
             <div className="mr-4 flex">
-              <a href="/" className="mr-6 flex items-center font-bold">
+              <Link to="/" className="mr-6 flex items-center font-bold">
                 AZ Team
-              </a>
+              </Link>
             </div>
             <div className="flex flex-1 items-center justify-end">
-              {/* Add navigation components here */}
+              <Navigation />
             </div>
           </div>
         </header>
